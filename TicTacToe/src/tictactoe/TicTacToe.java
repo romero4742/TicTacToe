@@ -24,20 +24,11 @@ import javax.swing.JTextField;
 
 public class TicTacToe 
 {
-	private static  boolean firstLaunch = true;
 	
 	public static void main (String [] args)
     {
 	   try
 	   {
-	      if(firstLaunch)
-	      {	
-	         Intro t = new Intro();
-	         t.setResizable(false);
-	         firstLaunch = false;
-	         Thread.sleep(3000);
-	         t.dispose();
-	      }
           GameFrame g = new GameFrame();
           g.setVisible(true);
           g.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -52,21 +43,6 @@ public class TicTacToe
    }
 }
 
-class Intro extends JFrame
-{
-   public Intro()
-   {
-	   setTitle("Tic-Tac-Toe");
-	   setSize(500,500);
-	   JPanel mainPanel = new JPanel(new BorderLayout());
-	   JLabel imageLabel = new JLabel();
-	   imageLabel.setIcon(new ImageIcon(getClass().getClassLoader().getResource("intro.jpg")));
-	   setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	   mainPanel.add(imageLabel,BorderLayout.CENTER);
-	   add(mainPanel);
-	   setVisible(true); 
-   }
-}
 
 class GameFrame extends JFrame implements ActionListener
 {
